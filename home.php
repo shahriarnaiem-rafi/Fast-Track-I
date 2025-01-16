@@ -225,7 +225,7 @@
             </div><br>
             <div style="display:flex;" class="container">
                 <div>
-                    <img src="./img/parselrecive.png" alt="" style="width:300px;  heaight:240px; margin-left:150px;">
+                    <img src="./img/four.png" alt="img" style="width:300px;  heaight:240px; margin-left:150px;">
 
                 </div>
                 <div style="width:700px; margin-left:20px;">
