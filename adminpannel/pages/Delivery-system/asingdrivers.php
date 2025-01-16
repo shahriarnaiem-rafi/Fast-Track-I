@@ -8,6 +8,13 @@ $database = mysqli_connect("localhost", "root", "", "fasttrack");
         header("location:index.php");
 
     }
+    if (isset($_GET['deleteid'])) {
+        $id = $_GET['deleteid'];
+        $sql = "DELETE FROM assing_drivers WHERE id=$id";
+        if (mysqli_query($database, $sql) === TRUE) {
+            header("location:index.php");
+        }
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
