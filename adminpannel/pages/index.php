@@ -10,7 +10,6 @@ include_once "../headerfooter/header.php";
 include_once "../connect/aside.php";
 ?>
 
-
 <!--end::Sidebar-->
 <!--begin::App Main-->
 <main class="app-main">

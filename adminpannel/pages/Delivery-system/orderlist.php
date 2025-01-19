@@ -121,7 +121,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delivery_status'])) {
                 <td>{$row['sender_name']}</td>
                 <td>{$row['sender_address']}</td>
                 <td>{$row['sender_phone']}</td>
-                <td>{$row['receiver_name']}</td>
+                <td >{$row['receiver_name']}</td>
                 <td>{$row['receiver_address']}</td>
                 <td>{$row['receiver_phone']}</td>
                 <td>{$row['product']}</td>

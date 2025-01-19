@@ -197,7 +197,7 @@ if (isset($_POST["submitted"])) {
                     $ns = $database->query("select * from branch");
                     while (list($id, $branch_name, $branch_code) = $ns->fetch_row()) {
                         
-                        echo "<option value='$id'>$branch_name</option>";
+                        echo "<option value='$id $branch_name'>$branch_name</option>";
                     }
                     ?>
 
@@ -219,7 +219,7 @@ if (isset($_POST["submitted"])) {
                     $ns = $database->query("select * from branch");
                     while (list($id, $branch_name, $branch_code) = $ns->fetch_row()) {
                        
-                        echo "<option value='$id'>$branch_name</option>";
+                        echo "<option value='$id $branch_name'>$branch_name</option>";
                     }
                     ?>
                 </select>
