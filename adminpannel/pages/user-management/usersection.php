@@ -17,16 +17,16 @@ if (isset($_POST["submitted"])) {
     $money = 0; // Initialize money
 
     // Calculate money based on weight
-    if ($weight < 1000) {
+    if ($weight <= 1000) {
         $money = 150;
     } else if ($weight <= 5000) {
-        $money = 300;
+        $money = 750;
     } else if ($weight <= 7000) {
-        $money = 500;
+        $money = 1050;
     } else if ($weight <= 10000) {
-        $money = 1000;
-    } else if ($weight <= 15000) {
         $money = 1800;
+    } else if ($weight <= 15000) {
+        $money = 2500;
     } else if ($weight <= 20000) {
         $money = 3500;
     }
@@ -120,7 +120,7 @@ if (isset($_POST["submitted"])) {
                     required
                     style="width: 100%; padding: 14px; margin-bottom: 18px; border-radius: 8px; border: 1px solid #ddd; background-color: #fff; color: #333; font-size: 1rem; box-sizing: border-box; transition: border-color 0.3s ease, box-shadow 0.3s ease;">
 
-                <label for="weight" style="display: block; font-size: 1rem; margin-bottom: 8px; color: #666;">Weight
+                <label for="weight" style="display: block; font-size: 1rem; margin-bottom: 8px; color: #666;" title="1kg=150; 5kg=750; 7kg=1500; 10kg=1800; 15kg=2500; 20kg=3500; ">Weight
                     (max:20kg)</label>
                 <input type="text" id="weight" name="weight" placeholder="Weight will be shown received in grams"
                     required
