@@ -1,4 +1,23 @@
-<aside class="app-sidebar bg-body-secondary shadow" data-bs-theme="dark">
+<style>
+  .app-sidebar {
+    color: black !important;
+}
+
+.app-sidebar .nav-link, 
+.app-sidebar .brand-text, 
+.app-sidebar .nav-item p {
+    color: black !important;
+}
+
+.app-sidebar .nav-icon, 
+.app-sidebar .fa-solid, 
+.app-sidebar .fa-regular, 
+.app-sidebar .bi {
+    color: black !important;
+}
+
+</style>
+<aside class="app-sidebar bg-[#FDBCD5] shadow" data-bs-theme="dark">
   <!--begin::Sidebar Brand-->
   <div class="sidebar-brand">
     <!--begin::Brand Link-->

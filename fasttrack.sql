@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 23, 2025 at 03:43 PM
+-- Generation Time: Jan 23, 2025 at 06:14 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -60,12 +60,15 @@ CREATE TABLE `branch` (
 --
 
 INSERT INTO `branch` (`branch_id`, `branch_name`, `branch_code`) VALUES
-(1, 'Cadpur', '3434'),
-(2, 'Noakhli', '32423'),
-(4, 'magura', '454'),
-(5, 'Vola', '45334'),
-(6, 'Dhaka', '1507'),
-(7, 'Cumilla', '34534');
+(1, 'Dhaka', '1207'),
+(2, 'Noakhali', '3836'),
+(4, 'Magura', '4545'),
+(5, 'Barisal', '4533'),
+(6, 'Comilla\r\n', '3909'),
+(7, 'Chittagong', '2323'),
+(8, 'Chandpur', '2444'),
+(9, 'Gazipur', '6766'),
+(10, 'Narayanganj', '3454');
 
 -- --------------------------------------------------------
 
@@ -107,7 +110,14 @@ INSERT INTO `customer_section` (`id`, `service_type`, `sender_name`, `sender_add
 (84, 'Express', 'Shahriar', '1 Cadpur', '01301441194', 'naiem', '4 magura', 'weqweqwe', 'we', 8000, '23-01-2025', 1000, 'pending'),
 (85, 'Express', 'Shahriar987', '1 Cadpur', '000909', 'naiem', '2 Noakhli', '234234', 'parcen', 8000, '12-12-2025', 1000, 'pending'),
 (86, 'Express', 'Naiem', '7 Cumilla', '87987979', 'onu', '1 Cadpur', '2323', 'parcel ', 7000, '23-01-2025', 500, 'pending'),
-(87, 'Standard', 'Shahriar', '1 Cadpur', '01301232', 'rafi', '2 Noakhli', 'weqweqwe', 'parcel', 500, '23-01-2025', 150, 'pending');
+(87, 'Standard', 'Shahriar', '1 Cadpur', '01301232', 'rafi', '2 Noakhli', 'weqweqwe', 'parcel', 500, '23-01-2025', 150, 'Delivered'),
+(88, 'Standard', 'Shahriar', '2 Noakhli', '32432', 'naiem', '5 Vola', '9999', 'parcel 800', 7000, '23-01-2025', 1050, 'pending'),
+(89, 'Express', 'Shahriar', '7 Cumilla', '01301232', 'rafi', '2 Noakhli', '234234', 'parcel 800', 500, '23-01-2025', 150, 'pending'),
+(90, 'Standard', 'SHahriar', '2 Noakhli', '090', 'naiem', '4 magura', '9999', '89', 1000, '12-12-2025', 150, 'pending'),
+(91, 'Standard', 'shahriar rafi', '2 Noakhli', '01301232', 'qwe', '2 Noakhli', '234234', 'we', 500, '23-01-2025', 150, 'pending'),
+(92, 'Standard', 'Shahriar', '4 magura', '32432', 'rafi', '2 Noakhli', '234234', '89', 500, '23-01-2025', 150, 'pending'),
+(93, 'Standard', 'shahriar rafi', '2 Noakhli', '01301232', 'naiem', '4 magura', 'weqweqwe', 'we', 8000, '12-12-2025', 1800, 'pending'),
+(94, 'Standard', 'Shahriar', '2 Noakhli', '01301232', 'naiem', '2 Noakhli', '234234', 'parcel 800', 8000, '23-01-2025', 1800, 'pending');
 
 -- --------------------------------------------------------
 
@@ -284,13 +294,13 @@ ALTER TABLE `assing_drivers`
 -- AUTO_INCREMENT for table `branch`
 --
 ALTER TABLE `branch`
-  MODIFY `branch_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `branch_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `customer_section`
 --
 ALTER TABLE `customer_section`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=88;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=95;
 
 --
 -- AUTO_INCREMENT for table `driver_management`
