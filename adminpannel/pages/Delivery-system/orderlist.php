@@ -108,7 +108,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delivery_status'])) {
                 <th>Delivery Location</th>
                 <th>Receiver Phone</th>
                 <th>Product</th>
-                <th>eight</th>
+                <th>Weight (gm)</th>
                 <th>Status</th>
                 <th>Action</th>
             </tr>
@@ -126,7 +126,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delivery_status'])) {
                 <td>{$row['receiver_address']}</td>
                 <td>{$row['receiver_phone']}</td>
                 <td>{$row['product']}</td>
-                <td>{$row['weight']}</td>
+                <td>{$row['weight']}<br>( <i class='fa-solid fa-bangladeshi-taka-sign'></i>{$row['money']})</td>
                 <td><span class='status {$row['status']}'>{$row['status']}</span></td>
                 <td>
                     <a href='#' style='color:green; font-size:20px;' 

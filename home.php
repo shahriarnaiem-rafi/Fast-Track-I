@@ -24,7 +24,7 @@
 
         .carousel_img img {
             height: 400px;
-            
+
         }
     </style>
 </head>
@@ -51,7 +51,8 @@
         <nav class="container">
             <div class="navbar bg-base-100">
                 <div class="navbar-start">
-                    <a class="text-xl" href="#"><img src="./img/logo2.png" alt="" style="width:200px; position:absolute; margin-top:-83px; border-radius: 50px 50px 50px 50px; margin-left:-30px;"></a>
+                    <a class="text-xl" href="#"><img src="./img/logo2.png" alt=""
+                            style="width:200px; position:absolute; margin-top:-83px; border-radius: 50px 50px 50px 50px; margin-left:-30px;"></a>
                 </div>
                 <div class="navbar-center hidden lg:flex">
                     <ul class="menu menu-horizontal px-1">
@@ -133,7 +134,7 @@
 
         <section>
             <div class="container">
-                <h1 class="text-5xl font-bold text-center">Our Valued Services</h1>
+                <h1 class="text-5xl font-bold text-center">Our Valueable Services</h1>
                 <p class="text-center">Thanks for staying at <a href="#" style="color:orange;">Fast Track</a>.We hope to
                     have the pleasure of doing business with you in the future.</p>
 
@@ -209,7 +210,8 @@
                 <p class="text-center text-2xl">Fast-track Courier Service has the most widespread network in
                     Bangladesh. Click below to view a list of all our Branches and Agencies.</p>
                 <div class="text-center">
-                    <button class="btn btn-info"><a href="./adminpannel/pages/branch/branchshow.php">View list</a></button>
+                    <button class="btn btn-info"><a href="./adminpannel/pages/branch/branchshow.php">View
+                            list</a></button>
                 </div>
             </div>
         </section>
@@ -307,18 +309,20 @@
 
         </section>
 
-        <section >
+        <section>
             <div class="container">
                 <div class="container">
                     <h1 class="text-5xl font-bold text-center">Asked Question About First-track</h1>
                     <p class="text-center text-xl">See the most frequently asked questions.We are here to help.</p>
                 </div>
                 <br>
-                <h1 style="margin-left:90px" class="text-3xl"><span class="text-[#ffd600] font-bold">01</span> What is Fast-track?</h1>
-                <p style="margin-left:110px" class="text-2xl">Fast-track is a well-known courier & parcel services in Bangladesh. </p>
+                <h1 style="margin-left:90px" class="text-3xl"><span class="text-[#ffd600] font-bold">01</span> What is
+                    Fast-track?</h1>
+                <p style="margin-left:110px" class="text-2xl">Fast-track is a well-known courier & parcel services in
+                    Bangladesh. </p>
             </div>
             <br>
-            
+
         </section>
 
 
@@ -362,7 +366,7 @@
             </aside>
             <nav class="md:place-self-center md:justify-self-end">
                 <div class="grid grid-flow-col gap-4">
-                    <a style="color:red" href="https://x.com/">
+                    <a style="color:red" href="https://x.com/" target="_blank">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                             class="fill-current">
                             <path
@@ -370,7 +374,7 @@
                             </path>
                         </svg>
                     </a>
-                    <a href="https://youtu.be/Kbs1whBR_io" style="color:red">
+                    <a href="https://youtu.be/Kbs1whBR_io" style="color:red" target="_blank">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                             class="fill-current">
                             <path
@@ -378,7 +382,7 @@
                             </path>
                         </svg>
                     </a>
-                    <a style="color:red" href="https://www.facebook.com">
+                    <a style="color:red" href="https://www.facebook.com" target="_blank">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                             class="fill-current">
                             <path
