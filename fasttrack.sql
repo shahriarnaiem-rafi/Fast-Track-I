@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 16, 2025 at 06:53 AM
+-- Generation Time: Jan 23, 2025 at 03:43 PM
 -- Server version: 10.4.32-MariaDB
--- PHP Version: 8.0.30
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -39,14 +39,9 @@ CREATE TABLE `assing_drivers` (
 --
 
 INSERT INTO `assing_drivers` (`id`, `driver_id`, `vehicle`, `order_id`) VALUES
-(7, 15, 'Truck 101', '45'),
-(8, 22, 'Truck 101', '44'),
-(9, 46, 'Bike 303', '23'),
-(11, 48, 'Truck 101', '23'),
-(12, 49, 'Bike 303', '23'),
-(13, 44, 'Truck 101', '23'),
-(14, 50, 'Van 202', '25'),
-(15, 62, 'Truck 101', '26');
+(17, 26, 'Truck 101', '65'),
+(18, 26, 'Truck 101', '61'),
+(19, 26, 'Truck 101', '71');
 
 -- --------------------------------------------------------
 
@@ -67,8 +62,10 @@ CREATE TABLE `branch` (
 INSERT INTO `branch` (`branch_id`, `branch_name`, `branch_code`) VALUES
 (1, 'Cadpur', '3434'),
 (2, 'Noakhli', '32423'),
-(3, 'mogobari', '.03644'),
-(4, 'magura', '454');
+(4, 'magura', '454'),
+(5, 'Vola', '45334'),
+(6, 'Dhaka', '1507'),
+(7, 'Cumilla', '34534');
 
 -- --------------------------------------------------------
 
@@ -86,7 +83,9 @@ CREATE TABLE `customer_section` (
   `receiver_address` varchar(100) NOT NULL,
   `receiver_phone` varchar(100) NOT NULL,
   `product` varchar(100) NOT NULL,
+  `weight` int(100) NOT NULL,
   `date_of_order` varchar(100) NOT NULL,
+  `money` int(100) NOT NULL,
   `status` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -94,11 +93,21 @@ CREATE TABLE `customer_section` (
 -- Dumping data for table `customer_section`
 --
 
-INSERT INTO `customer_section` (`id`, `service_type`, `sender_name`, `sender_address`, `sender_phone`, `receiver_name`, `receiver_address`, `receiver_phone`, `product`, `date_of_order`, `status`) VALUES
-(61, 'Standard', 'rafiii', '4', '54654', 'rajib', '1', '564', 'wer', '12-10-2025', 'Delivered'),
-(62, 'Standard', 'Rahat', '4', '09832432', 'rafi', '2', '456345r', '678', '15-01-2025', 'Delivered'),
-(63, 'Express', 'raf', '1', '324', 'rajib', '4', 'wer', '324', '234', 'Received'),
-(64, 'Express', 'rahat 420', '1', '43543', 'rafi', '2', '43534', '345', '345', 'Received');
+INSERT INTO `customer_section` (`id`, `service_type`, `sender_name`, `sender_address`, `sender_phone`, `receiver_name`, `receiver_address`, `receiver_phone`, `product`, `weight`, `date_of_order`, `money`, `status`) VALUES
+(74, 'Express', 'ashraf', '6 Dhaka', '01301441194', 'rfu', '2 Noakhli', '81298792813', 'Small yello parcel', 500, '23-01-2025', 150, 'pending'),
+(75, 'Standard', 'rafiiiii', '6 Dhaka', '32423423', 'ca', '2 Noakhli', '21324', 'parcel', 1000, '23-01-2025', 300, 'pending'),
+(76, 'Standard', 'rafiiii', '6 Dhaka', '01301232', 'naiem', '2 Noakhli', '234234', 'we', 2000, '23-01-2025', 300, 'pending'),
+(77, 'Standard', 'rafiiii', '6 Dhaka', '01301232', 'naiem', '2 Noakhli', '234234', 'we', 2000, '23-01-2025', 300, 'pending'),
+(78, 'Standard', 'rafiiii', '6 Dhaka', '01301232', 'naiem', '2 Noakhli', '234234', 'we', 2000, '23-01-2025', 300, 'pending'),
+(79, 'Standard', 'Shahriar', '1 Cadpur', '090', 'naiem', '2 Noakhli', '78', '878', 2000, '23-01-2025', 300, 'Received'),
+(80, 'Standard', 'Shahriar', '1 Cadpur', '32432', 'rafi', '4 magura', '234234', 'parcen', 600, '23-01-2025', 150, 'pending'),
+(81, 'Standard', 'Shahriar', '6 Dhaka', '8788788', 'sho', '1 Cadpur', '898688', 'parcel 800', 7000, '23-01-2025', 500, 'pending'),
+(82, 'Standard', 'Shahriar', '1 Cadpur', '090', 'radfas', '5 Vola', '234234', 'we', 500, '23-01-2025', 150, 'pending'),
+(83, 'Standard', 'Shahriar', '2 Noakhli', '01301232', 'naiem', '1 Cadpur', '342', 'parcel', 1000, '23-01-2025', 300, 'pending'),
+(84, 'Express', 'Shahriar', '1 Cadpur', '01301441194', 'naiem', '4 magura', 'weqweqwe', 'we', 8000, '23-01-2025', 1000, 'pending'),
+(85, 'Express', 'Shahriar987', '1 Cadpur', '000909', 'naiem', '2 Noakhli', '234234', 'parcen', 8000, '12-12-2025', 1000, 'pending'),
+(86, 'Express', 'Naiem', '7 Cumilla', '87987979', 'onu', '1 Cadpur', '2323', 'parcel ', 7000, '23-01-2025', 500, 'pending'),
+(87, 'Standard', 'Shahriar', '1 Cadpur', '01301232', 'rafi', '2 Noakhli', 'weqweqwe', 'parcel', 500, '23-01-2025', 150, 'pending');
 
 -- --------------------------------------------------------
 
@@ -152,11 +161,13 @@ CREATE TABLE `received` (
 
 INSERT INTO `received` (`id`, `order_id`, `recived_location`, `status`) VALUES
 (1, 54, '3', 'Received'),
-(2, 61, '1', ''),
 (3, 62, '2', 'Received'),
-(4, 54, '', ''),
 (5, 63, '4', 'Received'),
-(6, 64, '2', 'Received');
+(6, 64, '2', 'Received'),
+(7, 65, '5', 'Received'),
+(8, 71, '2', 'Received'),
+(10, 72, '6', 'Received'),
+(11, 79, '6', 'Received');
 
 -- --------------------------------------------------------
 
@@ -179,7 +190,10 @@ CREATE TABLE `register_staf` (
 INSERT INTO `register_staf` (`id`, `name`, `email`, `password`, `role`) VALUES
 (15, 'rafiuser', 'rafiuser@gmail.com', '$2y$10$AyXQBxAdJlL6GG5hKYS8ZOWEUYmASBg5OKckhmyFnAYBN1LpD6e0y', 'user'),
 (16, 'shahriar', 'shahriar@gmail.com', '$2y$10$ntXhkOEXm4TJVKEAs.ST1Oz105o/1aLXu5ipSxXs6PuzIwcMfgiOW', 'user'),
-(17, 'munna', 'munna420@gmail.com', '$2y$10$nbAcy.O6V4wYfW4EoPd8jO4jmthPVudsk0YrPtShGh8Z1TN4A8.tW', 'user');
+(17, 'munna', 'munna420@gmail.com', '$2y$10$nbAcy.O6V4wYfW4EoPd8jO4jmthPVudsk0YrPtShGh8Z1TN4A8.tW', 'user'),
+(18, 'ss', 'ss@gmail.com', 'ss@gmail.com', 'user'),
+(19, 'rafi', 'rafi1@gmail.com', '1233', 'admin'),
+(20, 'rafi', 'rads@gmail.com', '2323', 'user');
 
 -- --------------------------------------------------------
 
@@ -264,19 +278,19 @@ ALTER TABLE `registration`
 -- AUTO_INCREMENT for table `assing_drivers`
 --
 ALTER TABLE `assing_drivers`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `branch`
 --
 ALTER TABLE `branch`
-  MODIFY `branch_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `branch_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `customer_section`
 --
 ALTER TABLE `customer_section`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=88;
 
 --
 -- AUTO_INCREMENT for table `driver_management`
@@ -294,13 +308,13 @@ ALTER TABLE `parcel_recived_location`
 -- AUTO_INCREMENT for table `received`
 --
 ALTER TABLE `received`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `register_staf`
 --
 ALTER TABLE `register_staf`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `registration`
