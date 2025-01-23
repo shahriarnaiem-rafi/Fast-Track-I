@@ -145,63 +145,67 @@ if (isset($_POST["submitted"])) {
         return 0; // Handle case where weight exceeds 20kg
     }
     function generatePDF() {
-        var service = document.form.service.value;
-        var sendername = document.form.senderName.value;
-        var senderAddress = document.form.senderAddress.value;
-        var senderPhone = document.form.senderPhone.value;
+    var service = document.form.service.value;
+    var sendername = document.form.senderName.value;
+    var senderAddress = document.form.senderAddress.value;
+    var senderPhone = document.form.senderPhone.value;
 
-        var receivername = document.form.receiverName.value;
-        var receiveraddress = document.form.receiverAddress.value;
-        var receiverphone = document.form.receiverPhone.value;
-        var weight = document.form.weight.value;
-        var money = calculateMoney(weight); // Call the function to calculate money
-        var date = document.form.date.value;
+    var receivername = document.form.receiverName.value;
+    var receiveraddress = document.form.receiverAddress.value;
+    var receiverphone = document.form.receiverPhone.value;
+    var weight = document.form.weight.value;
+    var money = calculateMoney(weight); // Call the function to calculate money
+    var date = document.form.date.value;
 
-        var doc = open('', '', 'height=400px; width=600px;');
-        with (doc.document) {
-            write("<html><head><title>Fast-Track-courier</title>");
-            write("<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css'>");
-            write("<style>");
-            write("body { font-family: Arial, sans-serif; margin: 20px; }");
-            write(".receipt { border: 2px solid #ccc; padding: 20px; border-radius: 10px; background-color: lightblue; box-shadow: 0 4px 10px rgba(180, 133, 133, 0.1); }");
-            write("h1 { text-align: center; color: #333; font-size: 24px; margin-bottom: 10px; }");
-            write("h2 { color: #555; font-size: 20px; margin-bottom: 5px; }");
-            write("h3 { color: #666; font-size: 18px; margin-bottom: 5px; }");
-            write("p { margin: 5px 0; font-size: 16px; }");
-            write("strong { color: #333; }");
-            write(".button { margin-top: 20px; text-align: center; }");
-            write(".button button { margin-right: 10px; padding: 10px 15px; border: none; border-radius: 5px; background-color: #007BFF; color : white; cursor: pointer; font-size: 16px; transition: background-color 0.3s; }");
-            write(".button button:hover { background-color: #0056b3; }");
-            write("</style></head><body>");
+    var doc = open('', '', 'height=400px; width=600px;');
+    with (doc.document) {
+        write("<html><head><title>Fast-Track-courier</title>");
+        write("<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css'>");
+        write("<style>");
+        write("body { font-family: Arial, sans-serif; margin: 20px; }");
+        write(".receipt { border: 2px solid #ccc; padding: 20px; border-radius: 10px; background-color: lightblue; box-shadow: 0 4px 10px rgba(180, 133, 133, 0.1); }");
+        write("h1 { text-align: center; color: #333; font-size: 24px; margin-bottom: 10px; }");
+        write("h2 { color: #555; font-size: 20px; margin-bottom: 5px; }");
+        write("h3 { color: #666; font-size: 18px; margin-bottom: 5px; }");
+        write("p { margin: 5px 0; font-size: 16px; }");
+        write("strong { color: #333; }");
+        write("table { width: 100%; border-collapse: collapse; margin: 20px 0; }");
+        write("table, th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }");
+        write("th { background-color: #f2f2f2; font-weight: bold; }");
+        write(".button { margin-top: 20px; text-align: center; }");
+        write(".button button { margin-right: 10px; padding: 10px 15px; border: none; border-radius: 5px; background-color: #007BFF; color : white; cursor: pointer; font-size: 16px; transition: background-color 0.3s; }");
+        write(".button button:hover { background-color: #0056b3; }");
+        write("</style></head><body>");
 
-            write("<div class='receipt'>");
-            write("<h1>First-Track Receipt</h1>");
-            write("<h2>Date: " + date + "</h2>");
-        write("<div style='float:left; margin-right:100px;'>");
-            write("<h3>Sender Information</h3>");
-            write("<p>Service Type: " + service + "</p>");
-            write("<p><strong>Name:</strong> " + sendername + "</p>");
-            write("<p><strong>Address:</strong> " + senderAddress + "</p>");
-            write("<p><strong>Phone:</strong> " + senderPhone + "</p>");
-            write("</div>")
-            write("<div >");
-            write("<h3>Receiver Information</h3>");
-            write("<p><strong>Name:</strong> " + receivername + "</p>");
-            write("<p><strong>Address:</strong> " + receiveraddress + "</p>");
-            write("<p><strong>Phone:</strong> " + receiverphone + "</p>");
-            write("<p><strong>Weight:</strong> " + weight + " grams</p>");
-            write("<p><strong>Cost:</strong> <i class='fa-solid fa-bangladeshi-taka-sign'></i>" + money + "</p>");
-            write("</div>");
-            write("<div class='button'>");
-            write("<button onclick='self.close()'>Close</button>");
-            write("<button onclick='self.print()'>Print</button>");
-            write("</div>");
-            write("</>");
+        write("<div class='receipt'>");
+        write("<h1>First-Track-courier Receipt</h1>");
+        write("<h2>Date: " + date + "</h2>");
 
-            write("</body></html>");
-        }
+        write("<table>");
+        write("<tr><th colspan='2'>Sender Information</th></tr>");
+        write("<tr><td><strong>Service Type:</strong></td><td>" + service + "</td></tr>");
+        write("<tr><td><strong>Name:</strong></td><td>" + sendername + "</td></tr>");
+        write("<tr><td><strong>Address:</strong></td><td>" + senderAddress + "</td></tr>");
+        write("<tr><td><strong>Phone:</strong></td><td>" + senderPhone + "</td></tr>");
 
+        write("<tr><th colspan='2'>Receiver Information</th></tr>");
+        write("<tr><td><strong>Name:</strong></td><td>" + receivername + "</td></tr>");
+        write("<tr><td><strong>Address:</strong></td><td>" + receiveraddress + "</td></tr>");
+        write("<tr><td><strong>Phone:</strong></td><td>" + receiverphone + "</td></tr>");
+        write("<tr><td><strong>Weight:</strong></td><td>" + weight + " grams</td></tr>");
+        write("<tr><td><strong>Cost:</strong></td><td>" + money + " <i class='fa-solid fa-bangladeshi-taka-sign'></i> </td></tr>");
+        write("</table>");
+
+        write("<div class='button'>");
+        write("<button onclick='self.close()'>Close</button>");
+        write("<button onclick='self.print()'>Print</button>");
+        write("</div>");
+        write("</div>");
+        write("http://localhost/Fast-Track/Fast-Track-I/home.php");
+
+        write("</body></html>");
     }
+}
 
 
 </script>
