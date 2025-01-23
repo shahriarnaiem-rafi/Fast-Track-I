@@ -11,231 +11,77 @@ if (isset($_POST["submitted"])) {
     $product = $_POST['receiverProduct'];
     $date = $_POST['date'];
     $status = 'pending';
-   
-    $sql = $database->query("INSERT INTO customer_section(service_type,sender_name,sender_address,sender_phone,receiver_name,receiver_address,receiver_phone,product,date_of_order, status) VALUES('$service_type','$sender_name','$sender_address','$sender_phone','$receiver_name','$receiver_address','$receiver_phone','$product','$date', '$status')");
+    $weight = $_POST['weight'];
+    if ($weight >= 2000) {
+        // You can add logic here if the weight exceeds a certain threshold.
+    }
+
+    $sql = $database->query("INSERT INTO customer_section(service_type,sender_name,sender_address,sender_phone,receiver_name,receiver_address,receiver_phone,product,weight,date_of_order, status) VALUES('$service_type','$sender_name','$sender_address','$sender_phone','$receiver_name','$receiver_address','$receiver_phone','$product','$weight','$date', '$status')");
     header("location:index.php");
 }
 ?>
-
-    <style>
-        /* General Styling */
-
-
-        .form-container {
-            display: flex;
-            justify-content: space-between;
-            gap: 20px;
-            background: #ffffff;
-            border-radius: 15px;
-            padding: 20px 30px;
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-            max-width: 900px;
-            width: 100%;
-            color: #333;
-        }
-
-        h2 {
-            text-align: center;
-            margin-bottom: 20px;
-            font-size: 1.8rem;
-            color: #2575fc;
-        }
-
-        label {
-            font-weight: bold;
-            margin-bottom: 5px;
-            display: block;
-            font-size: 0.9rem;
-            color: #333;
-        }
-
-        input[type="text"],
-        input[type="tel"],
-        select {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            box-sizing: border-box;
-            font-size: 1rem;
-            outline: none;
-            transition: border-color 0.3s;
-        }
-
-        input[type="text"]:focus,
-        input[type="tel"]:focus,
-        select:focus {
-            border-color: #2575fc;
-        }
-
-        select {
-            background-color: #f9f9f9;
-            appearance: none;
-            font-size: 1rem;
-        }
-
-        .button {
-            width: 100%;
-            padding: 10px;
-            background: linear-gradient(135deg, #6a11cb, #2575fc);
-            border: none;
-            border-radius: 8px;
-            color: #fff;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-
-        .button:hover {
-            background: linear-gradient(135deg, #2575fc, #6a11cb);
-        }
-
-        .form-section {
-            flex: 1;
-            margin-bottom: 20px;
-        }
-
-        /* Receipt Styling */
-        #receipt {
-            background: #fff;
-            border: 1px solid #000;
-            padding: 20px;
-            max-width: 800px;
-            margin: 20px auto;
-            font-family: Arial, sans-serif;
-            color: #000;
-        }
-
-        .receipt-header {
-            text-align: center;
-            margin-bottom: 10px;
-            font-weight: bold;
-            text-transform: uppercase;
-            font-size: 1.2rem;
-            border-bottom: 1px solid #000;
-            padding-bottom: 10px;
-        }
-
-        .receipt-row {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 10px;
-        }
-
-        .receipt-row div {
-            flex: 1;
-            text-align: center;
-            font-size: 0.9rem;
-            padding: 5px;
-            border: 1px solid #000;
-        }
-
-        .receipt-ref {
-            text-align: right;
-            margin: 10px 0;
-            font-weight: bold;
-        }
-
-        .receipt-details {
-            border: 1px solid #000;
-            padding: 10px;
-            margin-top: 10px;
-        }
-
-        .receipt-footer {
-            text-align: center;
-            margin-top: 10px;
-            font-size: 0.8rem;
-            border-top: 1px solid #000;
-            padding-top: 10px;
-        }
-
-        .receipt-footer p {
-            margin: 2px 0;
-        }
-
-        .print-button {
-            margin-top: 10px;
-            text-align: center;
-        }
-
-        /* Hide Print Button during Printing */
-        @media print {
-            .print-button {
-                display: none;
-            }
-        }
-
-        .print-button {
-            background-color: red;
-        }
-    </style>
-</head>
-
-<body>
-    <div class="form-container">
-        <!-- Sender Form -->
-        <div class="form-section">
-            <h2>Sender</h2>
-            <form id="myForm" method="post">
-                <label for="service">Service Type</label>
-                <select id="service" name="service">
+<div class="form-section" style="max-width: 1100px; margin: 30px auto; padding: 40px; background-color: #ffffff; border-radius: 12px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); color: #333;">
+    <h3 style="text-align: center; font-size: 2.2rem; color: #555; margin-bottom: 30px; font-weight: 700;">Customer Details</h3>
+    <form id="myForm" method="post">
+        <div class="form-row" style="display: flex; justify-content: space-between; gap: 20px;">
+            <!-- Sender Section -->
+            <div class="sender-section" style="width: 48%; background-color: #f9f9f9; border-radius: 10px; padding: 20px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);">
+                <h2 style="color: #444; margin-bottom: 15px; font-size: 1.6rem; font-weight: 600;">Sender</h2>
+                <label for="service" style="display: block; font-size: 1rem; margin-bottom: 8px; color: #666;">Service Type</label>
+                <select id="service" name="service" style="width: 100%; padding: 14px; margin-bottom: 18px; border-radius: 8px; border: 1px solid #ddd; background-color: #fff; color: #333; font-size: 1rem; box-sizing: border-box; transition: border-color 0.3s ease, box-shadow 0.3s ease;">
                     <option value="Standard">Standard</option>
                     <option value="Express">Express</option>
                 </select>
 
-                <label for="senderName">Name</label>
-                <input type="text" id="senderName" name="senderName" required>
+                <label for="senderName" style="display: block; font-size: 1rem; margin-bottom: 8px; color: #666;">Name</label>
+                <input type="text" id="senderName" placeholder="Enter sender name" name="senderName" required style="width: 100%; padding: 14px; margin-bottom: 18px; border-radius: 8px; border: 1px solid #ddd; background-color: #fff; color: #333; font-size: 1rem; box-sizing: border-box; transition: border-color 0.3s ease, box-shadow 0.3s ease;">
 
-                <label for="senderAddress">Address</label>
-
-                <select name="senderAddress" id="senderAddress">
-                    
+                <label for="senderAddress" style="display: block; font-size: 1rem; margin-bottom: 8px; color: #666;">Address</label>
+                <select name="senderAddress" id="senderAddress" style="width: 100%; padding: 14px; margin-bottom: 18px; border-radius: 8px; border: 1px solid #ddd; background-color: #fff; color: #333; font-size: 1rem; box-sizing: border-box; transition: border-color 0.3s ease, box-shadow 0.3s ease;">
+                    <option value="">Select Address</option>
                     <?php
-                    echo "<option value=''>Select Address</option>";
                     $ns = $database->query("select * from branch");
                     while (list($id, $branch_name, $branch_code) = $ns->fetch_row()) {
-                        
-                        echo "<option value='$id $branch_name'>$branch_name</option>";
-                    }
-                    ?>
-
-
-                </select>
-
-                <label for="senderPhone">Phone</label>
-                <input type="tel" id="senderPhone" name="senderPhone" required>
-
-                <h2>Receiver</h2>
-
-                <label for="receiverName">Name</label>
-                <input type="text" id="receiverName" name="receiverName" required>
-
-                <label for="receiverAddress">Address</label>
-                <select name="receiverAddress" id="receiverAddress">
-                <?php
-                 echo "<option value=''>Select Address</option>";
-                    $ns = $database->query("select * from branch");
-                    while (list($id, $branch_name, $branch_code) = $ns->fetch_row()) {
-                       
                         echo "<option value='$id $branch_name'>$branch_name</option>";
                     }
                     ?>
                 </select>
 
-                <label for="receiverPhone">Phone</label>
-                <input type="tel" id="receiverPhone" name="receiverPhone" required>
+                <label for="senderPhone" style="display: block; font-size: 1rem; margin-bottom: 8px; color: #666;">Phone</label>
+                <input type="tel" id="senderPhone" placeholder="Enter sender phone" name="senderPhone" required style="width: 100%; padding: 14px; margin-bottom: 18px; border-radius: 8px; border: 1px solid #ddd; background-color: #fff; color: #333; font-size: 1rem; box-sizing: border-box; transition: border-color 0.3s ease, box-shadow 0.3s ease;">
 
-                <label for="receiverProduct">Product</label>
-                <input type="text" id="receiverProduct" name="receiverProduct" required>
+                <label for="receiverProduct" style="display: block; font-size: 1rem; margin-bottom: 8px; color: #666;">Product</label>
+                <input type="text" id="receiverProduct" name="receiverProduct" placeholder="Enter your product" required style="width: 100%; padding: 14px; margin-bottom: 18px; border-radius: 8px; border: 1px solid #ddd; background-color: #fff; color: #333; font-size: 1rem; box-sizing: border-box; transition: border-color 0.3s ease, box-shadow 0.3s ease;">
+            </div>
 
-                
-                <label for="date">Date</label>
-                <input type="text" id="date" name="date" required>
+            <!-- Receiver Section -->
+            <div class="receiver-section" style="width: 48%; background-color: #f9f9f9; border-radius: 10px; padding: 20px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);">
+                <h2 style="color: #444; margin-bottom: 15px; font-size: 1.6rem; font-weight: 600;">Receiver</h2>
+                <label for="receiverName" style="display: block; font-size: 1rem; margin-bottom: 8px; color: #666;">Name</label>
+                <input type="text" id="receiverName" placeholder="Enter receiver name" name="receiverName" required style="width: 100%; padding: 14px; margin-bottom: 18px; border-radius: 8px; border: 1px solid #ddd; background-color: #fff; color: #333; font-size: 1rem; box-sizing: border-box; transition: border-color 0.3s ease, box-shadow 0.3s ease;">
 
+                <label for="receiverAddress" style="display: block; font-size: 1rem; margin-bottom: 8px; color: #666;">Address</label>
+                <select name="receiverAddress" id="receiverAddress" style="width: 100%; padding: 14px; margin-bottom: 18px; border-radius: 8px; border: 1px solid #ddd; background-color: #fff; color: #333; font-size: 1rem; box-sizing: border-box; transition: border-color 0.3s ease, box-shadow 0.3s ease;">
+                    <option value="">Select Address</option>
+                    <?php
+                    $ns = $database->query("select * from branch");
+                    while (list($id, $branch_name, $branch_code) = $ns->fetch_row()) {
+                        echo "<option value='$id $branch_name'>$branch_name</option>";
+                    }
+                    ?>
+                </select>
 
-                <input type="submit" value="Submit" id="submitBtn" class="button" name="submitted">
-            </form>
+                <label for="receiverPhone" style="display: block; font-size: 1rem; margin-bottom: 8px; color: #666;">Phone</label>
+                <input type="tel" id="receiverPhone" name="receiverPhone" placeholder="Enter your Phone" required style="width: 100%; padding: 14px; margin-bottom: 18px; border-radius: 8px; border: 1px solid #ddd; background-color: #fff; color: #333; font-size: 1rem; box-sizing: border-box; transition: border-color 0.3s ease, box-shadow 0.3s ease;">
+
+                <label for="date" style="display: block; font-size: 1rem; margin-bottom: 8px; color: #666;">Date</label>
+                <input type="text" id="date" name="date" placeholder="Enter date of received product from customer" required style="width: 100%; padding: 14px; margin-bottom: 18px; border-radius: 8px; border: 1px solid #ddd; background-color: #fff; color: #333; font-size: 1rem; box-sizing: border-box; transition: border-color 0.3s ease, box-shadow 0.3s ease;">
+
+                <label for="weight" style="display: block; font-size: 1rem; margin-bottom: 8px; color: #666;">Weight</label>
+                <input type="text" id="weight" name="weight" placeholder="Weigh will be shown received in grams" required style="width: 100%; padding: 14px; margin-bottom: 18px; border-radius: 8px; border: 1px solid #ddd; background-color: #fff; color: #333; font-size: 1rem; box-sizing: border-box; transition: border-color 0.3s ease, box-shadow 0.3s ease;">
+            </div>
         </div>
-    </div>
+
+        <input type="submit" value="Submit" id="submitBtn" class="button" name="submitted" style="padding: 12px 20px; font-size: 1.1rem; color: white; background-color: #6c63ff; border: none; border-radius: 8px; cursor: pointer; width: 100%; transition: background-color 0.3s ease;">
+    </form>
+</div>

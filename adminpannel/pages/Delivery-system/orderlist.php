@@ -108,6 +108,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delivery_status'])) {
                 <th>Delivery Location</th>
                 <th>Receiver Phone</th>
                 <th>Product</th>
+                <th>eight</th>
                 <th>Status</th>
                 <th>Action</th>
             </tr>
@@ -125,17 +126,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delivery_status'])) {
                 <td>{$row['receiver_address']}</td>
                 <td>{$row['receiver_phone']}</td>
                 <td>{$row['product']}</td>
+                <td>{$row['weight']}</td>
                 <td><span class='status {$row['status']}'>{$row['status']}</span></td>
                 <td>
-                    <button style='color:green; font-size:20px;' 
+                    <a href='#' style='color:green; font-size:20px;' 
                         type='button' 
                         data-bs-toggle='modal' 
                         data-bs-target='#exampleModal' 
                         data-id='{$row['id']}' 
-                        data-status='{$row['status']}'>
-                        Update
-                    </button>
-                        <a href='index.php?deleteid={$row['id']}' style='color:red; font-size:20px;'>Delete</a>
+                        data-status='{$row['status']}'><i class='fa-solid fa-pen-to-square'></i>
+                    </a>
+                        <a href='index.php?deleteid={$row['id']}' style='color:red; font-size:20px;'><i class='fa-solid fa-trash'></i></a>
                 </td>
             </tr>
         </tbody>";

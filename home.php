@@ -362,7 +362,7 @@
             </aside>
             <nav class="md:place-self-center md:justify-self-end">
                 <div class="grid grid-flow-col gap-4">
-                    <a>
+                    <a style="color:red" href="https://x.com/">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                             class="fill-current">
                             <path
@@ -370,7 +370,7 @@
                             </path>
                         </svg>
                     </a>
-                    <a>
+                    <a href="https://youtu.be/Kbs1whBR_io" style="color:red">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                             class="fill-current">
                             <path
@@ -378,7 +378,7 @@
                             </path>
                         </svg>
                     </a>
-                    <a>
+                    <a style="color:red" href="https://www.facebook.com">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                             class="fill-current">
                             <path

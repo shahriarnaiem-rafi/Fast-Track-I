@@ -9,7 +9,7 @@ if (isset($_POST['registar'])) {
 
     $sql = "INSERT INTO register_staf(name,email,password,role) VALUES('$name','$email','$password','$role')";
     if (mysqli_query($database, $sql) == TRUE) {
-        header("Location:http://localhost/Qurear/Fast-Track/registarrole.php");
+        header("Location:index.php");
     } 
     // header("location:$_SERVER[PHP_SELF]");
 }
