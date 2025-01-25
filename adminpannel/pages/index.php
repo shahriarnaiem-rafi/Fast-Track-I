@@ -218,3 +218,4 @@ include_once "../connect/aside.php";
 include_once "../headerfooter/footer.php";
 ?>
 <script src="../DOM/show.js"></script>
+<script src="../bootstrap/js/bootstrap.bundle.js"></script>
