@@ -232,7 +232,11 @@ Manage notification settings (email/SMS alerts for delivery updates). -->
           <ul class="nav nav-treeview">
 
             <li class="nav-item">
+<<<<<<< HEAD
               <a href="../../rootfolder/login.php" class="nav-link" id="aurth-login-btn">
+=======
+              <a href="" class="nav-link" id="aurth-login-btn">
+>>>>>>> 98628b57478b8a3587dcd9a9eedd779736a9649d
                 <i class="nav-icon bi bi-circle"></i>
                 <p>Login</p>
               </a>
@@ -240,9 +244,16 @@ Manage notification settings (email/SMS alerts for delivery updates). -->
             <li class="nav-item">
               <a href="" class="nav-link" id="aurth-registry-btn">
                 <i class="nav-icon bi bi-circle"></i>
+<<<<<<< HEAD
                 <p>Register </p>
               </a>
             </li>
+=======
+                <p>Register</p>
+              </a>
+            </li>
+
+>>>>>>> 98628b57478b8a3587dcd9a9eedd779736a9649d
         </li>
 
       </ul>
