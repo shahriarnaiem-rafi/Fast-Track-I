@@ -18,67 +18,26 @@ if (isset($_POST['received'])) {
         echo "Error updating status in customer_section: " . $database->error;
     }
 }
+if (isset($_GET['deleteid'])) {
+    $id = $_GET['deleteid'];
+    $sql = "DELETE FROM received WHERE id=$id";
+    if (mysqli_query($database, $sql) === TRUE) {
+        header("location:index.php");
+    }
+}
 ?>
-
-<style>
-    h1 {
-        text-align: center;
-        color: #333;
-    }
-
-    .form-group {
-        margin-bottom: 15px;
-    }
-
-    label {
-        display: block;
-        font-weight: bold;
-        margin-bottom: 8px;
-        color: #555;
-    }
-
-    select,
-    input[type="text"],
-    input[type="submit"] {
-        width: 100%;
-        padding: 10px;
-        font-size: 16px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        background-color: #fafafa;
-    }
-
-    select:focus,
-    input[type="text"]:focus {
-        outline: none;
-        border-color: #007BFF;
-    }
-
-    input[type="submit"] {
-        background-color: #007BFF;
-        color: white;
-        border: none;
-        border-radius: 4px;
-        font-size: 18px;
-        cursor: pointer;
-    }
-
-    input[type="submit"]:hover {
-        background-color: #0056b3;
-    }
-
-    .form-group:last-child {
-        margin-bottom: 0;
-    }
-</style>
-
-<div class="container">
-    <h1>Order Details</h1>
+<div class="container"
+    style="max-width: 600px; margin: 0 auto; padding: 30px; background-color: #f7f9fc; border-radius: 12px; box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);">
+    <h1 style="text-align: center; color: #1e2a3a; font-size: 2.4rem; font-weight: 700; margin-bottom: 20px;">Order
+        Details</h1>
     <form action="#" method="post">
         <!-- Order ID Field -->
-        <div class="form-group">
-            <label for="order-id">Order ID</label>
-            <select name="customer_id1" id="order-id">
+        <div class="form-group" style="margin-bottom: 20px;">
+            <label for="order-id"
+                style="display: block; font-weight: 600; margin-bottom: 8px; color: #4a4a4a; font-size: 1rem;">Order
+                ID</label>
+            <select name="customer_id1" id="order-id"
+                style="width: 100%; padding: 12px; font-size: 16px; border: 1px solid #e2e2e2; border-radius: 6px; background-color: #fff; color: #333;">
                 <?php
                 $ns = $database->query("SELECT * FROM customer_section");
                 while (list($id) = $ns->fetch_row()) {
@@ -89,9 +48,12 @@ if (isset($_POST['received'])) {
         </div>
 
         <!-- Receiver Address Field -->
-        <div class="form-group">
-            <label for="receiverAddress">Current Address</label>
-            <select name="receiverAddress" id="receiverAddress">
+        <div class="form-group" style="margin-bottom: 20px;">
+            <label for="receiverAddress"
+                style="display: block; font-weight: 600; margin-bottom: 8px; color: #4a4a4a; font-size: 1rem;">Current
+                Address</label>
+            <select name="receiverAddress" id="receiverAddress"
+                style="width: 100%; padding: 12px; font-size: 16px; border: 1px solid #e2e2e2; border-radius: 6px; background-color: #fff; color: #333;">
                 <option value="">Select Address</option>
                 <?php
                 $ns = $database->query("SELECT * FROM branch");
@@ -103,9 +65,11 @@ if (isset($_POST['received'])) {
         </div>
 
         <!-- Status Field -->
-        <div class="form-group">
-            <label for="status">Status</label>
-            <select name="status" id="status">
+        <div class="form-group" style="margin-bottom: 20px;">
+            <label for="status"
+                style="display: block; font-weight: 600; margin-bottom: 8px; color: #4a4a4a; font-size: 1rem;">Status</label>
+            <select name="status" id="status"
+                style="width: 100%; padding: 12px; font-size: 16px; border: 1px solid #e2e2e2; border-radius: 6px; background-color: #fff; color: #333;">
                 <option value="">Select Status</option>
                 <option value="Received">Received</option>
                 <option value="Returned">Returned</option>
@@ -113,10 +77,11 @@ if (isset($_POST['received'])) {
         </div>
 
         <!-- Submit Button -->
-        <input type="submit" name="received" value="Received">
+        <input type="submit" name="received" value="Received"
+            style="width: 100%; padding: 14px; font-size: 18px; border: none; border-radius: 6px; background-color: #27ae60; color: white; cursor: pointer; transition: background-color 0.3s ease-in-out; font-weight: 700;">
+
     </form>
 </div>
-
 
 <?php
 $query = "SELECT * FROM received";
@@ -126,18 +91,17 @@ if ($search_query !== "") {
 $ns = $database->query($query);
 
 echo "<div class='table-container'> 
-    <h3>Received Details</h3>  
-    <table>
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Order ID</th>
-                <th>Recived_location</th>
-                
-                <th>Status</th>
-                
-            </tr>
-        </thead>";
+   <h3 style='text-align: center; font-size: 1.8rem; color: #333; font-weight: 600; margin-bottom: 20px;'>Received Details</h3>  
+<table style='width: 100%; border-collapse: collapse; background-color: #fff; border-radius: 8px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);'>
+    <thead style='background-color: #1e2a3a; color: #fff; font-size: 1rem; font-weight: bold;'>
+        <tr>
+            <th style='padding: 12px 15px; text-align: left;'>Id</th>
+            <th style='padding: 12px 15px; text-align: left;'>Order ID</th>
+            <th style='padding: 12px 15px; text-align: left;'>Received Location</th>
+            <th style='padding: 12px 15px; text-align: left;'>Status</th>
+            <th style='padding: 12px 15px; text-align: left;'>Action</th>
+        </tr>
+    </thead>";
 while ($row = $ns->fetch_assoc()) {
     echo " 
         <tbody>
@@ -146,6 +110,7 @@ while ($row = $ns->fetch_assoc()) {
                 <td>{$row['order_id']}</td>
                 <td>{$row['recived_location']}</td>
                 <td><span class='status {$row['status']}'>{$row['status']}</span></td>
+                <td>  <a href='index.php?deleteid={$row['id']}' style='color:red; font-size:20px;'><i class='fa-solid fa-trash'></i></a></td>
               
             </tr>
         </tbody>";

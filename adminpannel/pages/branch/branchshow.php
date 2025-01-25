@@ -69,8 +69,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['search_order'])) {
     </style>
 </head>
 
-
-
 <body>
     <?php
     $query = "SELECT * FROM branch";
@@ -80,32 +78,36 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['search_order'])) {
     $ns = $database->query($query);
 
     echo "<div class='table-container'> 
-    <h3>Order List</h3>  
+    <h3>Branch List</h3>  
     <table>
         <thead>
             <tr>
-                <th>Branch ID</th>
+                <th>SL NO</th> <!-- Serial Number Column -->
+                
                 <th>Branch Name</th>
                 <th>Branch Code</th>
+                <th>Branch ID</th>
             </tr>
         </thead>";
+
+    // Initialize serial number counter
+    $serial = 1;
+
     while ($row = $ns->fetch_assoc()) {
         echo " 
         <tbody>
             <tr>
-                <td>{$row['branch_id']}</td>
+                <td>{$serial}</td> <!-- Display Serial Number -->
                 <td>{$row['branch_name']}</td>
                 <td>{$row['branch_code']}</td>
-               
+                <td>{$row['branch_id']}</td>
             </tr>
         </tbody>";
+        $serial++; // Increment serial number for next row
     }
+
     echo " </table> </div>";
     ?>
-
-    <!-- Bootstrap JS Bundle -->
-
-
 
 </body>
 

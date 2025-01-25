@@ -75,7 +75,7 @@ include_once "../connect/aside.php";
         <!-- Second Row -->
         <div class="row">
           <div class="col-lg-6 col-12">
-            <div class="small-box text-bg-warning"
+            <div class="small-box bg-[#5A5852]"
               style="width: 70%; height: 200px; margin: 0 auto; margin-bottom: 20px;">
               <div class="inner">
                 <?php
@@ -218,3 +218,4 @@ include_once "../connect/aside.php";
 include_once "../headerfooter/footer.php";
 ?>
 <script src="../DOM/show.js"></script>
+<script src="../bootstrap/js/bootstrap.bundle.js"></script>

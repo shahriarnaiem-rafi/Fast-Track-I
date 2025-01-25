@@ -1,13 +1,29 @@
-<aside class="app-sidebar bg-body-secondary shadow" data-bs-theme="dark">
+<style>
+  .app-sidebar {
+    color: black !important;
+}
+
+.app-sidebar .nav-link, 
+.app-sidebar .brand-text, 
+.app-sidebar .nav-item p {
+    color: black !important;
+}
+
+.app-sidebar .nav-icon, 
+.app-sidebar .fa-solid, 
+.app-sidebar .fa-regular, 
+.app-sidebar .bi {
+    color: black !important;
+}
+
+</style>
+<aside class="app-sidebar bg-[#FDBCD5] shadow" data-bs-theme="dark">
   <!--begin::Sidebar Brand-->
   <div class="sidebar-brand">
     <!--begin::Brand Link-->
     <a href="./index.php" class="brand-link">
       <!--begin::Brand Image-->
-      <img
-        src="../assets/img/adminimg.png"
-        alt="AdminLTE Logo"
-        class="brand-image opacity-75 shadow" />
+      <img src="../assets/img/adminimg.png" alt="AdminLTE Logo" class="brand-image opacity-75 shadow" />
       <!--end::Brand Image-->
       <!--begin::Brand Text-->
       <span class="brand-text fw-light">Admin</span>
@@ -20,11 +36,7 @@
   <div class="sidebar-wrapper">
     <nav class="mt-2">
       <!--begin::Sidebar Menu-->
-      <ul
-        class="nav sidebar-menu flex-column"
-        data-lte-toggle="treeview"
-        role="menu"
-        data-accordion="false">
+      <ul class="nav sidebar-menu flex-column" data-lte-toggle="treeview" role="menu" data-accordion="false">
         <li class="nav-item menu-open">
 
 
@@ -72,7 +84,7 @@
                 <!-- Order list : Order List: A table with columns like order ID, customer name, pickup location, delivery location, status, etc.-->
               </a>
             </li>
-            
+
             <li class="nav-item">
               <a href="#" class="nav-link" id="delivery-assing-btn">
                 <i class="nav-icon bi bi-circle"></i>
@@ -91,7 +103,7 @@
               <a href="#" class="nav-link" id="recved_btn">
                 <i class="nav-icon bi bi-circle"></i>
                 <p>Parcel Recived</p>
-                
+
               </a>
             </li>
           </ul>
@@ -143,7 +155,7 @@ Display profit/loss analytics. -->
           </ul>
         </li>
 
-        
+
         <!-- branch -->
         <li class="nav-item">
           <a href="#" class="nav-link dashboard-show">
@@ -209,11 +221,6 @@ Manage notification settings (email/SMS alerts for delivery updates). -->
             </li>
           </ul>
         </li>
-
-
-
-
-        <li class="nav-header">EXAMPLES</li>
         <li class="nav-item">
           <a href="#" class="nav-link">
             <i class="fa-solid fa-user"></i>
@@ -223,39 +230,30 @@ Manage notification settings (email/SMS alerts for delivery updates). -->
             </p>
           </a>
           <ul class="nav nav-treeview">
+
             <li class="nav-item">
-              <a href="#" class="nav-link">
-                <i class="nav-icon bi bi-box-arrow-in-right"></i>
-                <p>
-                  Version 1
-                  <i class="nav-arrow bi bi-chevron-right"></i>
-                </p>
+              <a href="../../rootfolder/login.php" class="nav-link" id="aurth-login-btn">
+                <i class="nav-icon bi bi-circle"></i>
+                <p>Login</p>
               </a>
-              <ul class="nav nav-treeview">
-                <li class="nav-item">
-                  <a href="" class="nav-link" id="aurth-login-btn">
-                    <i class="nav-icon bi bi-circle"></i>
-                    <p>Login</p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="" class="nav-link" id="aurth-registry-btn">
-                    <i class="nav-icon bi bi-circle"></i>
-                    <p>Register</p>
-                  </a>
-                </li>
-              </ul>
             </li>
-
-          </ul>
+            <li class="nav-item">
+              <a href="" class="nav-link" id="aurth-registry-btn">
+                <i class="nav-icon bi bi-circle"></i>
+                <p>Register </p>
+              </a>
+            </li>
         </li>
 
-        <li class="nav-item">
-          <a href="../../rootfolder/logout.php" class="nav-link">
+      </ul>
+      </li>
+
+      <li class="nav-item">
+        <a href="../../rootfolder/logout.php" class="nav-link">
           <i class="fa-solid fa-right-to-bracket"></i>
-            <p>Log out</p>
-          </a>
-        </li>
+          <p>Log out</p>
+        </a>
+      </li>
 
       </ul>
       <!--end::Sidebar Menu-->

@@ -210,6 +210,8 @@ if (isset($_POST["submit"])) {
             <small class="text-red-500"><?= $errors['password'] ?? '' ?></small><br>
             <input type="password" name="confirm" placeholder="Please re-enter your password"><br>
             <small class="text-red-500"><?= $errors['confirm'] ?? '' ?></small><br>
+            <input type="file"  name="image"><br>
+            <small class="text-red-500"><?= $errors['image'] ?? '' ?></small><br>
 
 
             <p>
