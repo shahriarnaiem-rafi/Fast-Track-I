@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 23, 2025 at 06:14 PM
+-- Generation Time: Jan 25, 2025 at 05:30 AM
 -- Server version: 10.4.32-MariaDB
--- PHP Version: 8.2.12
+-- PHP Version: 8.0.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -89,35 +89,40 @@ CREATE TABLE `customer_section` (
   `weight` int(100) NOT NULL,
   `date_of_order` varchar(100) NOT NULL,
   `money` int(100) NOT NULL,
-  `status` varchar(100) NOT NULL
+  `status` varchar(100) NOT NULL,
+  `order_time` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `customer_section`
 --
 
-INSERT INTO `customer_section` (`id`, `service_type`, `sender_name`, `sender_address`, `sender_phone`, `receiver_name`, `receiver_address`, `receiver_phone`, `product`, `weight`, `date_of_order`, `money`, `status`) VALUES
-(74, 'Express', 'ashraf', '6 Dhaka', '01301441194', 'rfu', '2 Noakhli', '81298792813', 'Small yello parcel', 500, '23-01-2025', 150, 'pending'),
-(75, 'Standard', 'rafiiiii', '6 Dhaka', '32423423', 'ca', '2 Noakhli', '21324', 'parcel', 1000, '23-01-2025', 300, 'pending'),
-(76, 'Standard', 'rafiiii', '6 Dhaka', '01301232', 'naiem', '2 Noakhli', '234234', 'we', 2000, '23-01-2025', 300, 'pending'),
-(77, 'Standard', 'rafiiii', '6 Dhaka', '01301232', 'naiem', '2 Noakhli', '234234', 'we', 2000, '23-01-2025', 300, 'pending'),
-(78, 'Standard', 'rafiiii', '6 Dhaka', '01301232', 'naiem', '2 Noakhli', '234234', 'we', 2000, '23-01-2025', 300, 'pending'),
-(79, 'Standard', 'Shahriar', '1 Cadpur', '090', 'naiem', '2 Noakhli', '78', '878', 2000, '23-01-2025', 300, 'Received'),
-(80, 'Standard', 'Shahriar', '1 Cadpur', '32432', 'rafi', '4 magura', '234234', 'parcen', 600, '23-01-2025', 150, 'pending'),
-(81, 'Standard', 'Shahriar', '6 Dhaka', '8788788', 'sho', '1 Cadpur', '898688', 'parcel 800', 7000, '23-01-2025', 500, 'pending'),
-(82, 'Standard', 'Shahriar', '1 Cadpur', '090', 'radfas', '5 Vola', '234234', 'we', 500, '23-01-2025', 150, 'pending'),
-(83, 'Standard', 'Shahriar', '2 Noakhli', '01301232', 'naiem', '1 Cadpur', '342', 'parcel', 1000, '23-01-2025', 300, 'pending'),
-(84, 'Express', 'Shahriar', '1 Cadpur', '01301441194', 'naiem', '4 magura', 'weqweqwe', 'we', 8000, '23-01-2025', 1000, 'pending'),
-(85, 'Express', 'Shahriar987', '1 Cadpur', '000909', 'naiem', '2 Noakhli', '234234', 'parcen', 8000, '12-12-2025', 1000, 'pending'),
-(86, 'Express', 'Naiem', '7 Cumilla', '87987979', 'onu', '1 Cadpur', '2323', 'parcel ', 7000, '23-01-2025', 500, 'pending'),
-(87, 'Standard', 'Shahriar', '1 Cadpur', '01301232', 'rafi', '2 Noakhli', 'weqweqwe', 'parcel', 500, '23-01-2025', 150, 'Delivered'),
-(88, 'Standard', 'Shahriar', '2 Noakhli', '32432', 'naiem', '5 Vola', '9999', 'parcel 800', 7000, '23-01-2025', 1050, 'pending'),
-(89, 'Express', 'Shahriar', '7 Cumilla', '01301232', 'rafi', '2 Noakhli', '234234', 'parcel 800', 500, '23-01-2025', 150, 'pending'),
-(90, 'Standard', 'SHahriar', '2 Noakhli', '090', 'naiem', '4 magura', '9999', '89', 1000, '12-12-2025', 150, 'pending'),
-(91, 'Standard', 'shahriar rafi', '2 Noakhli', '01301232', 'qwe', '2 Noakhli', '234234', 'we', 500, '23-01-2025', 150, 'pending'),
-(92, 'Standard', 'Shahriar', '4 magura', '32432', 'rafi', '2 Noakhli', '234234', '89', 500, '23-01-2025', 150, 'pending'),
-(93, 'Standard', 'shahriar rafi', '2 Noakhli', '01301232', 'naiem', '4 magura', 'weqweqwe', 'we', 8000, '12-12-2025', 1800, 'pending'),
-(94, 'Standard', 'Shahriar', '2 Noakhli', '01301232', 'naiem', '2 Noakhli', '234234', 'parcel 800', 8000, '23-01-2025', 1800, 'pending');
+INSERT INTO `customer_section` (`id`, `service_type`, `sender_name`, `sender_address`, `sender_phone`, `receiver_name`, `receiver_address`, `receiver_phone`, `product`, `weight`, `date_of_order`, `money`, `status`, `order_time`) VALUES
+(76, 'Standard', 'rafiiii', '6 Dhaka', '01301232', 'naiem', '2 Noakhli', '234234', 'we', 2000, '23-01-2025', 300, 'pending', '2025-01-25 03:37:39'),
+(77, 'Standard', 'rafiiii', '6 Dhaka', '01301232', 'naiem', '2 Noakhli', '234234', 'we', 2000, '23-01-2025', 300, 'pending', '2025-01-25 03:37:39'),
+(78, 'Standard', 'rafiiii', '6 Dhaka', '01301232', 'naiem', '2 Noakhli', '234234', 'we', 2000, '23-01-2025', 300, 'pending', '2025-01-25 03:37:39'),
+(79, 'Standard', 'Shahriar', '1 Cadpur', '090', 'naiem', '2 Noakhli', '78', '878', 2000, '23-01-2025', 300, 'Received', '2025-01-25 03:37:39'),
+(80, 'Standard', 'Shahriar', '1 Cadpur', '32432', 'rafi', '4 magura', '234234', 'parcen', 600, '23-01-2025', 150, 'pending', '2025-01-25 03:37:39'),
+(81, 'Standard', 'Shahriar', '6 Dhaka', '8788788', 'sho', '1 Cadpur', '898688', 'parcel 800', 7000, '23-01-2025', 500, 'pending', '2025-01-25 03:37:39'),
+(82, 'Standard', 'Shahriar', '1 Cadpur', '090', 'radfas', '5 Vola', '234234', 'we', 500, '23-01-2025', 150, 'pending', '2025-01-25 03:37:39'),
+(83, 'Standard', 'Shahriar', '2 Noakhli', '01301232', 'naiem', '1 Cadpur', '342', 'parcel', 1000, '23-01-2025', 300, 'pending', '2025-01-25 03:37:39'),
+(84, 'Express', 'Shahriar', '1 Cadpur', '01301441194', 'naiem', '4 magura', 'weqweqwe', 'we', 8000, '23-01-2025', 1000, 'pending', '2025-01-25 03:37:39'),
+(85, 'Express', 'Shahriar987', '1 Cadpur', '000909', 'naiem', '2 Noakhli', '234234', 'parcen', 8000, '12-12-2025', 1000, 'pending', '2025-01-25 03:37:39'),
+(86, 'Express', 'Naiem', '7 Cumilla', '87987979', 'onu', '1 Cadpur', '2323', 'parcel ', 7000, '23-01-2025', 500, 'pending', '2025-01-25 03:37:39'),
+(87, 'Standard', 'Shahriar', '1 Cadpur', '01301232', 'rafi', '2 Noakhli', 'weqweqwe', 'parcel', 500, '23-01-2025', 150, 'Delivered', '2025-01-25 03:37:39'),
+(88, 'Standard', 'Shahriar', '2 Noakhli', '32432', 'naiem', '5 Vola', '9999', 'parcel 800', 7000, '23-01-2025', 1050, 'pending', '2025-01-25 03:37:39'),
+(89, 'Express', 'Shahriar', '7 Cumilla', '01301232', 'rafi', '2 Noakhli', '234234', 'parcel 800', 500, '23-01-2025', 150, 'pending', '2025-01-25 03:37:39'),
+(90, 'Standard', 'SHahriar', '2 Noakhli', '090', 'naiem', '4 magura', '9999', '89', 1000, '12-12-2025', 150, 'pending', '2025-01-25 03:37:39'),
+(91, 'Standard', 'shahriar rafi', '2 Noakhli', '01301232', 'qwe', '2 Noakhli', '234234', 'we', 500, '23-01-2025', 150, 'pending', '2025-01-25 03:37:39'),
+(92, 'Standard', 'Shahriar', '4 magura', '32432', 'rafi', '2 Noakhli', '234234', '89', 500, '23-01-2025', 150, 'pending', '2025-01-25 03:37:39'),
+(93, 'Standard', 'shahriar rafi', '2 Noakhli', '01301232', 'naiem', '4 magura', 'weqweqwe', 'we', 8000, '12-12-2025', 1800, 'pending', '2025-01-25 03:37:39'),
+(94, 'Standard', 'Shahriar', '2 Noakhli', '01301232', 'naiem', '2 Noakhli', '234234', 'parcel 800', 8000, '23-01-2025', 1800, 'pending', '2025-01-25 03:37:39'),
+(95, 'Standard', 'munna', '2 Noakhali', '4534', 'rajib', '5 Barisal', '3873823', '345', 7000, '15-01-2025', 1050, 'pending', '2025-01-25 03:37:39'),
+(96, 'Standard', 'Rahat', '2 Noakhali', '345345', 'rafi', '4 Magura', 'asdfas', '345', 9000, '12-10-2025', 1800, 'pending', '2025-01-25 03:37:39'),
+(97, 'Standard', 'Rafi', '2 Noakhali', '37982437', 'rafi', '2 Noakhali', 'asdfas', '3453', 9000, '15-01-2025', 1800, 'pending', '2025-01-25 03:37:39'),
+(98, 'Express', 'Rafi', '2 Noakhali', '37982437', 'rajib', '2 Noakhali', '3873823', '345', 9000, '15-01-2025', 1800, 'pending', '2025-01-25 03:37:39'),
+(99, 'Express', 'Rahat', '6 Comilla\r\n', '345345', 'rafi', '2 Noakhali', '3873823', 'wer', 9000, '12-10-2025', 1800, 'pending', '2025-01-25 04:23:21'),
+(100, 'Express', 'Rafi', '1 Dhaka', '37982437', 'rajib', '2 Noakhali', '3873823', '345', 9000, '15-01-2025', 1800, 'pending', '2025-01-25 04:25:30');
 
 -- --------------------------------------------------------
 
@@ -138,7 +143,8 @@ CREATE TABLE `driver_management` (
 
 INSERT INTO `driver_management` (`id`, `driver_name`, `driver_phone`, `available`) VALUES
 (25, 'hasibul', '02324234', 'unavailable'),
-(26, 'MUNNA', '4564', 'available');
+(26, 'MUNNA', '4564', 'available'),
+(27, 'naim', '35345', 'available');
 
 -- --------------------------------------------------------
 
@@ -203,7 +209,9 @@ INSERT INTO `register_staf` (`id`, `name`, `email`, `password`, `role`) VALUES
 (17, 'munna', 'munna420@gmail.com', '$2y$10$nbAcy.O6V4wYfW4EoPd8jO4jmthPVudsk0YrPtShGh8Z1TN4A8.tW', 'user'),
 (18, 'ss', 'ss@gmail.com', 'ss@gmail.com', 'user'),
 (19, 'rafi', 'rafi1@gmail.com', '1233', 'admin'),
-(20, 'rafi', 'rads@gmail.com', '2323', 'user');
+(20, 'rafi', 'rads@gmail.com', '2323', 'user'),
+(21, '3423', 'rahat@gmail.com', '5rgg', 'user'),
+(22, '3423', 'rahat@gmail.com', '5rgg', 'user');
 
 -- --------------------------------------------------------
 
@@ -300,13 +308,13 @@ ALTER TABLE `branch`
 -- AUTO_INCREMENT for table `customer_section`
 --
 ALTER TABLE `customer_section`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=95;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
 
 --
 -- AUTO_INCREMENT for table `driver_management`
 --
 ALTER TABLE `driver_management`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT for table `parcel_recived_location`
@@ -324,7 +332,7 @@ ALTER TABLE `received`
 -- AUTO_INCREMENT for table `register_staf`
 --
 ALTER TABLE `register_staf`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `registration`
