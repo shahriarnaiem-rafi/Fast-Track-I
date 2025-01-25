@@ -45,12 +45,8 @@ if (isset($_POST["submitted"])) {
     style="max-width: 1100px; margin: 30px auto; padding: 40px; background-color: #ffffff; border-radius: 12px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); color: #333;">
     <h3 style="text-align: center; font-size: 2.2rem; color: #555; margin-bottom: 30px; font-weight: 700;">Customer
         Details</h3>
-<<<<<<< HEAD
-        <!-- onsubmit="return generatePDF(); -->
-    <form id="myForm" method="post" name="form" >
-=======
-    <form id="myForm" method="post" name="form" onsubmit="return generatePDF();">
->>>>>>> 98628b57478b8a3587dcd9a9eedd779736a9649d
+    <!-- onsubmit="return generatePDF(); -->
+    <form id="myForm" method="post" name="form">
         <div class="form-row" style="display: flex; justify-content: space-between; gap: 20px;">
             <!-- Sender Section -->
             <div class="sender-section"
@@ -138,11 +134,7 @@ if (isset($_POST["submitted"])) {
     </form>
 </div>
 
-<<<<<<< HEAD
 <!-- <script>
-=======
-<script>
->>>>>>> 98628b57478b8a3587dcd9a9eedd779736a9649d
     function calculateMoney(weight) {
         weight = parseInt(weight);
         if (weight < 1000) return 150;
@@ -217,8 +209,4 @@ if (isset($_POST["submitted"])) {
 }
 
 
-<<<<<<< HEAD
 </script> -->
-=======
-</script>
->>>>>>> 98628b57478b8a3587dcd9a9eedd779736a9649d

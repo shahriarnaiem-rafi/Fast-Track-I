@@ -135,7 +135,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delivery_status'])) {
                         data-bs-toggle='modal' 
                         data-bs-target='#exampleModal' 
                         data-id='{$row['id']}' 
-<<<<<<< HEAD
+
                         data-status='{$row['status']}'>
                         <i class='fa-solid fa-pen-to-square'></i>
                     </a>
@@ -158,11 +158,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delivery_status'])) {
                         style='color:blue; font-size:20px;'>
                         <i class='fa-solid fa-print'></i>
                     </a>
-=======
-                        data-status='{$row['status']}'><i class='fa-solid fa-pen-to-square'></i>
-                    </a>
-                        <a href='index.php?deleteid={$row['id']}' style='color:red; font-size:20px;'><i class='fa-solid fa-trash'></i></a>
->>>>>>> 98628b57478b8a3587dcd9a9eedd779736a9649d
                 </td>
             </tr>
         </tbody>";
