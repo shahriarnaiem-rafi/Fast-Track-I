@@ -1,4 +1,5 @@
 <?php
+ob_start();
 $database = mysqli_connect("localhost", "root", "", "fasttrack");
 
 if (isset($_POST['received'])) {
