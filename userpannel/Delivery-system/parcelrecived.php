@@ -117,4 +117,5 @@ while ($row = $ns->fetch_assoc()) {
         </tbody>";
 }
 echo " </table> </div>";
+ob_end_flush();
 ?>

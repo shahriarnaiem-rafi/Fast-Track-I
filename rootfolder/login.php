@@ -1,7 +1,6 @@
 <?php
 session_start();
 $database = mysqli_connect("localhost", "root", "", "fasttrack");
-
 if (isset($_POST["loggedin"])) {
 
     $email = $_POST["email"];
